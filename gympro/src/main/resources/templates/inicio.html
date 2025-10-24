@@ -12,10 +12,6 @@
             --bs-success-rgb: 16, 185, 129;
         }
 
-        body{
-            background-color: #ffffff;
-        }
-
         .navbar {
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
         }
@@ -71,6 +67,19 @@
                 transform: translateY(0);
             }
         }
+
+        .stats-bg{
+            background-color: #ff9100;
+        }
+
+        .btn-brand{
+            background-color: #ff9100;
+        }
+
+        footer{
+            text-align: center;
+        }
+        
     </style>
 
 </head>
@@ -133,7 +142,6 @@
             <div class="text-center mb-5">
                 <h2 class="display-5 fw-bold text-dark mb-3">Nuestros Servicios</h2>
                 <p class="text-muted fs-5">Descubre todo lo que tenemos para ti</p>
-                <div class="mx-auto mt-3" style="width: 80px; height: 4px; background: linear-gradient(90deg, #198754, #20c997);"></div>
             </div>
 
 
@@ -141,20 +149,31 @@
 
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm rounded-4">
-                        <div class="card-img-top d-flex align-items-center justify-content-center">
-                            <i class="bi bi-heart-pulse display-1 text-white icon-float"></i>
-                        </div>
+                        <img src="/src/main/resources/static/img/entrenamiento.jpg" class="card-img-top" alt="Entrenamientos">
                         <div class="card-body text-center p-4">
-                            <div class="mb-3">
-                                <i class="bi bi-fire text-success fs-3"></i>
-                            </div>
-                            <h5 class="card-title fw-bold fs-4 mb-3">Entrenamientos</h5>
-                            <p class="card-text text-muted mb-4">
-                                Clases como CrossFit, Yoga o Cardio Funcional, guiadas por entrenadores expertos que te ayudarán a superar tus límites.
-                            </p>
-                            <a href="/entrenamientos" class="btn btn-outline-success rounded-pill px-4">
-                                Ver más <i class="bi bi-arrow-right ms-1"></i>
-                            </a>
+                        <div class="mb-3">
+                            <i class="bi bi-fire text-success fs-3"></i>
+                        </div>
+                        <h5 class="card-title fw-bold fs-4 mb-3">Entrenamientos</h5>
+                        <p class="card-text text-muted mb-4">Clases como CrossFit, Yoga o Cardio Funcional, guiadas por entrenadores expertos que te ayudarán a superar tus límites.</p>
+                        <a href="/entrenamientos" class="btn btn-brand rounded-pill px-4">Ver más <i class="bi bi-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm rounded-4">
+                        <img src="/src/main/resources/static/img/nutricion.jpg" class="card-img-top" alt="Nutrición">
+                        <div class="card-body text-center p-4">
+                        <div class="mb-3">
+                            <i class="bi bi-fire text-success fs-3"></i>
+                        </div>
+                        <h5 class="card-title fw-bold fs-4 mb-3">Nutrición</h5>
+                        <p class="card-text text-muted mb-4">Conoceras a nuestro mejores nutricionistas para que te acompañen en este proceso de superación.</p>
+                        <a href="/entrenamientos" class="btn btn-brand rounded-pill px-4">Ver más <i class="bi bi-arrow-right ms-1"></i></a>
                         </div>
                     </div>
                 </div>
@@ -162,41 +181,14 @@
 
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm rounded-4">
-                        <div class="card-img-top d-flex align-items-center justify-content-center">
-                            <i class="bi bi-apple display-1 text-white icon-float" style="animation-delay: 0.5s;"></i>
-                        </div>
+                        <img src="/src/main/resources/static/img/reservas.jpg" class="card-img-top" alt="Reservas">
                         <div class="card-body text-center p-4">
-                            <div class="mb-3">
-                                <i class="bi bi-stars text-success fs-3"></i>
-                            </div>
-                            <h5 class="card-title fw-bold fs-4 mb-3">Nutrición</h5>
-                            <p class="card-text text-muted mb-4">
-                                Te ayudamos a mejorar tu alimentación con planes personalizados para potenciar tus resultados y alcanzar tus objetivos.
-                            </p>
-                            <a href="/nutricion" class="btn btn-outline-success rounded-pill px-4">
-                                Ver más <i class="bi bi-arrow-right ms-1"></i>
-                            </a>
+                        <div class="mb-3">
+                            <i class="bi bi-fire text-success fs-3"></i>
                         </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm rounded-4">
-                        <div class="card-img-top d-flex align-items-center justify-content-center">
-                            <i class="bi bi-calendar-check display-1 text-white icon-float" style="animation-delay: 1s;"></i>
-                        </div>
-                        <div class="card-body text-center p-4">
-                            <div class="mb-3">
-                                <i class="bi bi-clock-history text-success fs-3"></i>
-                            </div>
-                            <h5 class="card-title fw-bold fs-4 mb-3">Reservas</h5>
-                            <p class="card-text text-muted mb-4">
-                                Agenda tu próxima clase con solo un clic. Rápido, fácil y desde cualquier dispositivo. ¡Tu próximo reto te espera!
-                            </p>
-                            <a href="/reservas" class="btn btn-outline-success rounded-pill px-4">
-                                Ir a reservas <i class="bi bi-arrow-right ms-1"></i>
-                            </a>
+                        <h5 class="card-title fw-bold fs-4 mb-3">Reservas</h5>
+                        <p class="card-text text-muted mb-4">Agenda tu próxima clase con solo un clic. Rápido, fácil y desde cualquier dispositivo. ¡Tu próximo reto te espera!</p>
+                        <a href="/entrenamientos" class="btn btn-brand rounded-pill px-4">Ver más <i class="bi bi-arrow-right ms-1"></i></a>
                         </div>
                     </div>
                 </div>
@@ -205,7 +197,7 @@
     </section>
 
 
-    <section class="py-5 bg-success text-white">
+    <section class="py-5 stats-bg text-white" >
         <div class="container">
             <div class="row text-center g-4">
                 <div class="col-md-3 col-6">
@@ -241,30 +233,9 @@
     </section>
 
 
-    <footer class="bg-dark text-light py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    <p class="mb-0">
-                        <i class="bi bi-lightning-charge-fill text-success"></i> 
-                        © 2025 GymPro · Todos los derechos reservados
-                    </p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <a href="#" class="text-light text-decoration-none me-3">
-                        <i class="bi bi-facebook fs-4"></i>
-                    </a>
-                    <a href="#" class="text-light text-decoration-none me-3">
-                        <i class="bi bi-instagram fs-4"></i>
-                    </a>
-                    <a href="#" class="text-light text-decoration-none">
-                        <i class="bi bi-twitter fs-4"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
+    <footer class="d-flex flex-wrap justify-content-center align-items-center bg-dark py-3 my-4 border-top"> 
+        <p class="col-md-4 mb-0 text-center" style="color: #ffffff;">© 2025 Derechos reservados - GymPro</p> 
+    </footer> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
