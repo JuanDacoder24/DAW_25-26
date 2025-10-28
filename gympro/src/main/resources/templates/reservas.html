@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar Clase - GymPro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --bs-success-rgb: 16, 185, 129;
+        }
+
+        .navbar {
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .hero-form {
+            background: linear-gradient(#ff9100 0%, #f8f8f8 100%);
+            padding: 60px 0;
+        }
+
+        .form-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        .form-header {
+            background: #ff9100;
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .form-header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .form-header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .form-content {
+            padding: 40px 30px;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: #ff9100;
+            box-shadow: 0 0 0 0.25rem rgba(255, 145, 0, 0.25);
+        }
+
+        .btn-brand {
+            background-color: #ff9100;
+            border-color: #ff9100;
+            color: white;
+            padding: 12px;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-brand:hover {
+            background-color: #e68200;
+            border-color: #e68200;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 145, 0, 0.3);
+        }
+
+        .class-card {
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .class-card:hover {
+            border-color: #ff9100;
+            box-shadow: 0 5px 15px rgba(255, 145, 0, 0.2);
+        }
+
+        .class-card input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .class-card input[type="radio"]:checked + .class-content {
+            border-color: #ff9100;
+        }
+
+        .class-card input[type="radio"]:checked ~ .check-icon {
+            display: block;
+        }
+
+        .check-icon {
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff9100;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .time-slot {
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 5px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .time-slot:hover {
+            border-color: #ff9100;
+            background-color: rgba(255, 145, 0, 0.1);
+        }
+
+        .time-slot input[type="radio"] {
+            display: none;
+        }
+
+        .time-slot input[type="radio"]:checked + label {
+            background-color: #ff9100;
+            color: white;
+        }
+
+        .success-message {
+            display: none;
+            background: #10b981;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+        }
+
+        .info-badge {
+            background: rgba(255, 145, 0, 0.1);
+            color: #ff9100;
+            padding: 8px 16px;
+            border-radius: 8px;
+            display: inline-block;
+            margin: 5px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .form-header h1 {
+                font-size: 1.5em;
+            }
+            
+            .form-content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/">
+                <i class="bi bi-lightning-charge-fill"></i> GymPro
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">
+                            <i class=""></i> Inicio
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-form">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="form-card">
+                        <div class="form-header">
+                            <h1><i class="bi bi-calendar-plus-fill"></i> Reserva tu Clase</h1>
+                            <p>Elige tu entrenamiento favorito y el horario que mejor te convenga</p>
+                        </div>
+
+                        <div class="form-content">
+                            <form id="bookingForm">
+                                <div class="row g-4">
+                                    <div class="col-12">
+                                        <h5 class="fw-bold mb-3"><i class="bi bi-person-circle"></i> Información Personal</h5>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="nombre" class="form-label fw-semibold">Nombre Completo *</label>
+                                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label fw-semibold">Correo Electrónico *</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="telefono" class="form-label fw-semibold">Teléfono *</label>
+                                        <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="numero_socio" class="form-label fw-semibold">Número de Socio (opcional)</label>
+                                        <input type="text" class="form-control" id="numero_socio" name="numero_socio" placeholder="Si ya eres socio">
+                                    </div>
+
+                                    <div class="col-12 mt-4">
+                                        <h5 class="fw-bold mb-3"><i class="bi bi-calendar2-event"></i> Selecciona tu Clase</h5>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="row g-3">
+                                            <div class="col-md-4">
+                                                <label class="class-card">
+                                                    <input type="radio" name="clase" value="crossfit" required>
+                                                    <div class="class-content">
+                                                        <div class="text-center mb-2">
+                                                            <i class="bi bi-fire fs-1" style="color: #ff9100;"></i>
+                                                        </div>
+                                                        <h6 class="fw-bold text-center">CrossFit</h6>
+                                                        <p class="text-muted small mb-0">Alta intensidad</p>
+                                                        <div class="mt-2">
+                                                            <span class="info-badge"><i class="bi bi-clock"></i> 60 min</span>
+                                                            <span class="info-badge"><i class="bi bi-people"></i> 15 max</span>
+                                                        </div>
+                                                    </div>
+                                                    <span class="check-icon"><i class="bi bi-check-lg"></i></span>
+                                                </label>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <label class="class-card">
+                                                    <input type="radio" name="clase" value="yoga" required>
+                                                    <div class="class-content">
+                                                        <div class="text-center mb-2">
+                                                            <i class="bi bi-heart-pulse fs-1" style="color: #ff9100;"></i>
+                                                        </div>
+                                                        <h6 class="fw-bold text-center">Yoga</h6>
+                                                        <p class="text-muted small mb-0">Flexibilidad y calma</p>
+                                                        <div class="mt-2">
+                                                            <span class="info-badge"><i class="bi bi-clock"></i> 45 min</span>
+                                                            <span class="info-badge"><i class="bi bi-people"></i> 20 max</span>
+                                                        </div>
+                                                    </div>
+                                                    <span class="check-icon"><i class="bi bi-check-lg"></i></span>
+                                                </label>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <label class="class-card">
+                                                    <input type="radio" name="clase" value="cardio" required>
+                                                    <div class="class-content">
+                                                        <div class="text-center mb-2">
+                                                            <i class="bi bi-lightning-charge fs-1" style="color: #ff9100;"></i>
+                                                        </div>
+                                                        <h6 class="fw-bold text-center">Cardio</h6>
+                                                        <p class="text-muted small mb-0">Resistencia</p>
+                                                        <div class="mt-2">
+                                                            <span class="info-badge"><i class="bi bi-clock"></i> 50 min</span>
+                                                            <span class="info-badge"><i class="bi bi-people"></i> 25 max</span>
+                                                        </div>
+                                                    </div>
+                                                    <span class="check-icon"><i class="bi bi-check-lg"></i></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 mt-4">
+                                        <h5 class="fw-bold mb-3"><i class="bi bi-clock-history"></i> Fecha y Horario</h5>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="fecha" class="form-label fw-semibold">Fecha de la Clase *</label>
+                                        <input type="date" class="form-control" id="fecha" name="fecha" required>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label class="form-label fw-semibold">Horario Disponible *</label>
+                                        <div class="d-flex flex-wrap">
+                                            <label class="time-slot">
+                                                <input type="radio" name="horario" value="07:00" required>
+                                                <label>07:00 AM</label>
+                                            </label>
+                                            <label class="time-slot">
+                                                <input type="radio" name="horario" value="09:00" required>
+                                                <label>09:00 AM</label>
+                                            </label>
+                                            <label class="time-slot">
+                                                <input type="radio" name="horario" value="11:00" required>
+                                                <label>11:00 AM</label>
+                                            </label>
+                                            <label class="time-slot">
+                                                <input type="radio" name="horario" value="16:00" required>
+                                                <label>04:00 PM</label>
+                                            </label>
+                                            <label class="time-slot">
+                                                <input type="radio" name="horario" value="18:00" required>
+                                                <label>06:00 PM</label>
+                                            </label>
+                                            <label class="time-slot">
+                                                <input type="radio" name="horario" value="20:00" required>
+                                                <label>08:00 PM</label>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="notas" class="form-label fw-semibold">Notas Adicionales</label>
+                                        <textarea class="form-control" id="notas" name="notas" rows="3" placeholder="¿Alguna consideración especial que debamos saber?"></textarea>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-brand w-100">
+                                            <i class="bi bi-check-circle"></i> Confirmar Reserva
+                                        </button>
+                                    </div>
+
+                                    <div class="success-message" id="successMessage">
+                                        <i class="bi bi-check-circle-fill"></i> ¡Reserva confirmada con éxito! Te hemos enviado un correo de confirmación.
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="d-flex flex-wrap justify-content-center align-items-center bg-dark py-3 my-4 border-top"> 
+        <p class="col-md-4 mb-0 text-center" style="color: #ffffff;">© 2025 Derechos reservados - GymPro</p> 
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrenamientos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .navbar {
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .hero-form {
+            background: linear-gradient(#ff9100 0%, #f8f8f8 100%);
+            padding: 60px 0;
+        }
+
+        .form-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        .form-header {
+            background: #ff9100;
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .form-header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .form-header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .form-content {
+            padding: 40px 30px;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: #ff9100;
+            box-shadow: 0 0 0 0.25rem rgba(255, 145, 0, 0.25);
+        }
+
+        .btn-brand {
+            background-color: #ff9100;
+            border-color: #ff9100;
+            color: white;
+            padding: 12px;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-brand:hover {
+            background-color: #e68200;
+            border-color: #e68200;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 145, 0, 0.3);
+        }
+
+        .form-check-input:checked {
+            background-color: #ff9100;
+            border-color: #ff9100;
+        }
+
+        .success-message {
+            display: none;
+            background: #10b981;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .form-header h1 {
+                font-size: 1.5em;
+            }
+            
+            .form-content {
+                padding: 30px 20px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/">
+                <i class="bi bi-lightning-charge-fill"></i> GymPro
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">
+                            <i class=""></i> Inicio
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-9"> 
+
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img th:src="@{/img/cardio.jpg}" class="d-block w-100" alt="Clase de Cardio">
+                    </div>
+                    <div class="carousel-item">
+                        <img th:src="@{/img/crossfit.jpg}" class="d-block w-100" alt="Clase de Crossfit">
+                    </div>
+                    <div class="carousel-item">
+                        <img th:src="@{/img/yoga.jpg}" class="d-block w-100" alt="Clase de Yoga">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <section class="py-5 bg-light">
+        <div class="container">
+
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-dark mb-3">Entrenamientos que ofrecemos</h2>
+                <p class="text-muted fs-5">Descubre los beneficios al practicar estos entrenamientos</p>
+            </div>
+
+
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm rounded-4">
+                        <div class="card-body text-center p-4">
+                        <div class="mb-3">
+                            <i class="bi bi-fire text-success fs-3"></i>
+                        </div>
+                        <h5 class="card-title fw-bold fs-4 mb-3">CrossFit</h5>
+                        <p class="card-text text-start mb-4 "><strong>Mejora de la resistencia cardiovascular y muscular</strong> <br> Al combinar ejercicios de alta intensidad como burpees o remo, el CrossFit eleva el ritmo cardíaco y fortalece tanto el corazón como los pulmones. Simultáneamente, los levantamientos olímpicos y los ejercicios con peso corporal aumentan la fuerza general.</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm rounded-4">
+                        <div class="card-body text-center p-4">
+                        <div class="mb-3">
+                            <i class="bi bi-fire text-success fs-3"></i>
+                        </div>
+                        <h5 class="card-title fw-bold fs-4 mb-3">Yoga</h5>
+                        <p class="card-text text-start mb-4 "><strong>Reducción del estrés y la ansiedad</strong> <br> AEl yoga promueve la relajación, ayudando a disminuir los niveles de cortisol, la "hormona del estrés". Esto se traduce en un estado de mayor calma y un mejor control de la ansiedad.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm rounded-4">
+                        <div class="card-body text-center p-4">
+                        <div class="mb-3">
+                            <i class="bi bi-fire text-success fs-3"></i>
+                        </div>
+                        <h5 class="card-title fw-bold fs-4 mb-3">Cardio</h5>
+                        <p class="card-text text-start mb-4 "><strong>Fortalecimiento del corazón y los pulmones</strong> <br> El cardio hace que el corazón bombee más sangre con cada latido, mejorando su eficiencia y fortaleciendo todo el sistema cardiovascular.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero-form">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="form-card">
+                        <div class="form-header">
+                            <h1><i class="bi bi-person-plus-fill"></i> Únete a GymPro</h1>
+                            <p>Completa el formulario para comenzar tu transformación</p>
+                        </div>
+
+                        <div class="form-content">
+                            <form id="gymForm">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="nombre" class="form-label fw-semibold">Nombre *</label>
+                                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="apellidos" class="form-label fw-semibold">Apellidos *</label>
+                                        <input type="text" class="form-control" id="apellidos" name="apellidos" required>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="email" class="form-label fw-semibold">Correo Electrónico *</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="telefono" class="form-label fw-semibold">Teléfono *</label>
+                                        <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="fecha_nacimiento" class="form-label fw-semibold">Fecha de Nacimiento *</label>
+                                        <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="plan" class="form-label fw-semibold">Plan de Membresía *</label>
+                                        <select class="form-select" id="plan" name="plan" required>
+                                            <option value="">Selecciona un plan</option>
+                                            <option value="basico">Básico - 1 mes</option>
+                                            <option value="trimestral">Trimestral - 3 meses</option>
+                                            <option value="semestral">Semestral - 6 meses</option>
+                                            <option value="anual">Anual - 12 meses</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label class="form-label fw-semibold">Objetivos de Entrenamiento</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="obj1" name="objetivos" value="perder_peso">
+                                            <label class="form-check-label" for="obj1">
+                                                Perder peso
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="obj2" name="objetivos" value="ganar_masa">
+                                            <label class="form-check-label" for="obj2">
+                                                Ganar masa muscular
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="obj3" name="objetivos" value="tonificar">
+                                            <label class="form-check-label" for="obj3">
+                                                Tonificar
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="obj4" name="objetivos" value="mejorar_salud">
+                                            <label class="form-check-label" for="obj4">
+                                                Mejorar salud general
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="comentarios" class="form-label fw-semibold">Comentarios o Condiciones Médicas</label>
+                                        <textarea class="form-control" id="comentarios" name="comentarios" rows="4" placeholder="Déjanos saber si tienes alguna condición médica o necesidad especial..."></textarea>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-brand w-100">
+                                            <i class="bi bi-check-circle"></i> Inscribirme Ahora
+                                        </button>
+                                    </div>
+
+                                    <div class="success-message" id="successMessage">
+                                        <i class="bi bi-check-circle-fill"></i> ¡Inscripción enviada con éxito! Nos pondremos en contacto contigo pronto.
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+    <footer class="d-flex flex-wrap justify-content-center align-items-center bg-dark py-3 my-4 border-top"> 
+        <p class="col-md-4 mb-0 text-center" style="color: #ffffff;">© 2025 Derechos reservados - GymPro</p> 
+    </footer> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

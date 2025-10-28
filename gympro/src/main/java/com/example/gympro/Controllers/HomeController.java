@@ -10,4 +10,19 @@ public class HomeController {
     public String inicio() {
         return "inicio";
     }
+
+    @GetMapping("/entrenamientos")
+    public String mostrarEntrenamientos() {
+        return "entrenamientos"; 
+    }
+
+    @GetMapping("/nutricion")
+    public String mostrarNutricion() {
+        return "nutricion"; 
+    }
+
+    @GetMapping("/reservas")
+    public String mostrarReservas() {
+        return "reservas"; 
+    }
 }
