@@ -254,7 +254,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="/">
-                <i class="bi bi-lightning-charge-fill text-success"></i> GymPro
+                <i class="bi bi-lightning-charge-fill"></i> GymPro
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -371,13 +371,230 @@
         </div>
     </section>
 
-    <section class="cta-section">
+    <section class="hero-form">
         <div class="container">
-            <h2>¿Listo para Comenzar tu Transformación?</h2>
-            <p>Agenda tu consulta nutricional y recibe un plan personalizado diseñado por nuestros expertos</p>
-            <a href="/nutricion" class="btn btn-light-custom">
-                <i class="bi bi-calendar-check-fill"></i> Agendar Consulta Ahora
-            </a>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="form-card">
+                        <div class="form-header">
+                            <h1><i class="bi bi-heart-pulse-fill"></i> Consulta Nutricional</h1>
+                            <p>Recibe un plan personalizado diseñado por nuestros nutricionistas expertos</p>
+                        </div>
+
+                        <div class="form-content">
+                            <div class="info-box">
+                                <i class="bi bi-info-circle-fill"></i>
+                                <strong>¿Por qué una consulta nutricional?</strong>
+                                <p class="mb-0 mt-2">Nuestros nutricionistas certificados crearán un plan personalizado basado en tus objetivos, estilo de vida y necesidades específicas para maximizar tus resultados.</p>
+                            </div>
+
+                            <form id="nutritionForm">
+                                <div class="row g-4">
+                                    <div class="col-12">
+                                        <h5 class="fw-bold mb-3"><i class="bi bi-person-circle"></i> Información Personal</h5>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="nombre" class="form-label fw-semibold">Nombre Completo *</label>
+                                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label fw-semibold">Correo Electrónico *</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="telefono" class="form-label fw-semibold">Teléfono *</label>
+                                        <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="edad" class="form-label fw-semibold">Edad *</label>
+                                        <input type="number" class="form-control" id="edad" name="edad" min="15" max="100" required>
+                                    </div>
+
+                                    <div class="col-12 section-divider">
+                                        <h5 class="fw-bold mb-3"><i class="bi bi-clipboard-data"></i> Datos Físicos</h5>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label for="peso" class="form-label fw-semibold">Peso Actual (kg) *</label>
+                                        <input type="number" class="form-control" id="peso" name="peso" step="0.1" required>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label for="altura" class="form-label fw-semibold">Altura (cm) *</label>
+                                        <input type="number" class="form-control" id="altura" name="altura" required>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label for="genero" class="form-label fw-semibold">Género *</label>
+                                        <select class="form-select" id="genero" name="genero" required>
+                                            <option value="">Seleccionar</option>
+                                            <option value="masculino">Masculino</option>
+                                            <option value="femenino">Femenino</option>
+                                            <option value="otro">Otro</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-12 section-divider">
+                                        <h5 class="fw-bold mb-3"><i class="bi bi-bullseye"></i> Tu Objetivo Principal</h5>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="row g-3">
+                                            <div class="col-md-3 col-6">
+                                                <label class="goal-option">
+                                                    <input type="radio" name="objetivo" value="perder_peso" required>
+                                                    <i class="bi bi-arrow-down-circle"></i>
+                                                    <div class="goal-content">
+                                                        <strong>Perder Peso</strong>
+                                                        <p class="small text-muted mb-0">Déficit calórico</p>
+                                                    </div>
+                                                </label>
+                                            </div>
+
+                                            <div class="col-md-3 col-6">
+                                                <label class="goal-option">
+                                                    <input type="radio" name="objetivo" value="ganar_masa" required>
+                                                    <i class="bi bi-arrow-up-circle"></i>
+                                                    <div class="goal-content">
+                                                        <strong>Ganar Masa</strong>
+                                                        <p class="small text-muted mb-0">Superávit calórico</p>
+                                                    </div>
+                                                </label>
+                                            </div>
+
+                                            <div class="col-md-3 col-6">
+                                                <label class="goal-option">
+                                                    <input type="radio" name="objetivo" value="mantener" required>
+                                                    <i class="bi bi-dash-circle"></i>
+                                                    <div class="goal-content">
+                                                        <strong>Mantener</strong>
+                                                        <p class="small text-muted mb-0">Balance calórico</p>
+                                                    </div>
+                                                </label>
+                                            </div>
+
+                                            <div class="col-md-3 col-6">
+                                                <label class="goal-option">
+                                                    <input type="radio" name="objetivo" value="definir" required>
+                                                    <i class="bi bi-gem"></i>
+                                                    <div class="goal-content">
+                                                        <strong>Definir</strong>
+                                                        <p class="small text-muted mb-0">Reducir grasa</p>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 section-divider">
+                                        <h5 class="fw-bold mb-3"><i class="bi bi-activity"></i> Nivel de Actividad</h5>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="actividad" class="form-label fw-semibold">Nivel de Actividad Física *</label>
+                                        <select class="form-select" id="actividad" name="actividad" required>
+                                            <option value="">Seleccionar</option>
+                                            <option value="sedentario">Sedentario (poco o ningún ejercicio)</option>
+                                            <option value="ligero">Ligero (1-3 días por semana)</option>
+                                            <option value="moderado">Moderado (3-5 días por semana)</option>
+                                            <option value="intenso">Intenso (6-7 días por semana)</option>
+                                            <option value="muy_intenso">Muy Intenso (ejercicio diario intenso)</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="tipo_consulta" class="form-label fw-semibold">Tipo de Consulta *</label>
+                                        <select class="form-select" id="tipo_consulta" name="tipo_consulta" required>
+                                            <option value="">Seleccionar</option>
+                                            <option value="presencial">Presencial</option>
+                                            <option value="online">Online</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-12 section-divider">
+                                        <h5 class="fw-bold mb-3"><i class="bi bi-exclamation-triangle"></i> Restricciones Alimentarias</h5>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label class="form-label fw-semibold">¿Tienes alguna restricción alimentaria?</label>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="vegetariano" name="restricciones" value="vegetariano">
+                                                    <label class="form-check-label" for="vegetariano">
+                                                        Vegetariano
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="vegano" name="restricciones" value="vegano">
+                                                    <label class="form-check-label" for="vegano">
+                                                        Vegano
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="sin_gluten" name="restricciones" value="sin_gluten">
+                                                    <label class="form-check-label" for="sin_gluten">
+                                                        Sin gluten
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="sin_lactosa" name="restricciones" value="sin_lactosa">
+                                                    <label class="form-check-label" for="sin_lactosa">
+                                                        Sin lactosa
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="diabetes" name="restricciones" value="diabetes">
+                                                    <label class="form-check-label" for="diabetes">
+                                                        Diabetes
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="hipertension" name="restricciones" value="hipertension">
+                                                    <label class="form-check-label" for="hipertension">
+                                                        Hipertensión
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="alergias" class="form-label fw-semibold">Alergias o Intolerancias Alimentarias</label>
+                                        <textarea class="form-control" id="alergias" name="alergias" rows="3" placeholder="Especifica cualquier alergia o intolerancia..."></textarea>
+                                    </div>
+
+                                    <!-- Información Adicional -->
+                                    <div class="col-12 section-divider">
+                                        <h5 class="fw-bold mb-3"><i class="bi bi-chat-dots"></i> Información Adicional</h5>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="comentarios" class="form-label fw-semibold">Cuéntanos más sobre tus hábitos y objetivos</label>
+                                        <textarea class="form-control" id="comentarios" name="comentarios" rows="4" placeholder="Horarios de comida, preferencias alimentarias, experiencia previa con dietas, etc."></textarea>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-brand w-100">
+                                            <i class="bi bi-send-check"></i> Solicitar Consulta Nutricional
+                                        </button>
+                                    </div>
+
+                                    <div class="success-message" id="successMessage">
+                                        <i class="bi bi-check-circle-fill"></i> ¡Solicitud enviada con éxito! Nuestro equipo de nutricionistas se pondrá en contacto contigo pronto para agendar tu consulta.
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
