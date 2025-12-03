@@ -1,5 +1,7 @@
 package com.example.simulacro.entity;
 
+import java.util.UUID;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -15,7 +17,7 @@ public class Empleado {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id = UUID.randomUUID().toString();
 
     // Muchos empleados pertenecen a UNA empresa
     @ManyToOne(fetch = FetchType.EAGER)
@@ -37,11 +39,11 @@ public class Empleado {
     }
 
 
-    public Long getId() {
+   public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -76,5 +78,7 @@ public class Empleado {
     public void setEdad(Integer edad) {
         this.edad = edad;
     }
+
+    
 
 }
