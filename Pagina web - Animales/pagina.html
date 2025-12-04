@@ -7,32 +7,8 @@
     <title>Juntos Adoptemos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
-    <!--lo que hago aca es darle clase a los estilos del bootstrap de esta manera puedo 
-    sobreescribir sus estilos por los mios ya que no tiene los colores que escogi, pero no solo colores
-    sino tambien medidas especificas-->
-    <style>
-        :root {
-            --bs-primary: #0a802d;
-            --bs-secondary: #ff8c42;
-        }
-
-        .bg-gradient-green {
-            background: #0a802d;
-        }
-
-        .bg-gradient-orange {
-            background: #e67e22;
-        }
-
-        .carousel-section {
-            height: 400px;
-        }
-
-        .card-img-placeholder {
-            height: 200px;
-        }
-    </style>
+    <link rel="stylesheet" href="pagina.css">
+    
 </head>
 
 <body>
@@ -41,8 +17,8 @@
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">
                 <div class="d-flex align-items-center gap-2">
-                    <div class="bg-white bg-opacity-25 rounded" ></div>
-                    <span>logo</span>
+                    <!--Primera imagen con el formato png-->
+                    <img src="img/logo_examen-removebg.png" alt="">
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -50,27 +26,29 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                    <!--Lo que hago aqui es poner el documento html dentro del href para que haya una navegacion entre paginas-->
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Inicio</a>
+                        <a class="nav-link text-white" href="pagina.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Adoptar</a>
+                        <a class="nav-link text-white" href="album.html">Album</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Contáctanos</a>
+                        <a class="nav-link text-white" href="login.html">Login</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hago un hero banner con un padin de altura de 5 para tener un poco de espacio -->
+    <!-- Hago un hero banner con un padin de altura de 5 para tener un poco de espacio, asi mismo meto el carrusel en el lado derecho 
+     del banner -->
     <section class="py-5 bg-light">
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-5">
                     <div class="pe-lg-4">
-                        <h1 class="display-5 fw-bold text-success mb-4">Welcome to Our Platform</h1>
+                        <h1 class="display-5 fw-bold text-success mb-4">Bienvenido a Juntos Adoptemos</h1>
                         <p class="text-secondary lh-lg">Lorem Ipsum is simply dummy text of the printing and typesetting
                             industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
                             an unknown printer took a galley of type and scrambled it to make a type specimen book. It
@@ -83,13 +61,13 @@
                     <div id="carouselExample" class="carousel slide">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="..." class="d-block w-100" alt="...">
+                                <img src="https://imgs.search.brave.com/7BCXbI5nWCyTks0obMmwo_LFh_IQhNg-0daGaKxedgU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90by1ncmF0aXMv/YmViZS1uYWphLXN1/bWF0cmFuYS1taW9s/ZXBpcy1zZXJwaWVu/dGUtc29icmUtZm9u/ZG8tYmxhbmNvLXBv/c2ljaW9uLWxpc3Rh/LWF0YWNhci1iZWJl/LW5hamEtc3VtYXRy/YW5hLXByaW1lci1w/bGFuby1uYWphLXNl/cnBpZW50ZV80ODgx/NDUtMjg2Ny5qcGc_/c2VtdD1haXNfaHli/cmlkJnc9NzQwJnE9/ODA" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="..." class="d-block w-100" alt="...">
+                                <img src="https://imgs.search.brave.com/dnyAP6MSvb1jg6CwTQDJUqiu-OnqHW_KxMyIayajgg4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMucGV4ZWxzLmNv/bS9waG90b3MvNDA2/MDE0L3BleGVscy1w/aG90by00MDYwMTQu/anBlZz9hdXRvPWNv/bXByZXNzJmNzPXRp/bnlzcmdiJmRwcj0x/Jnc9NTAw" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="..." class="d-block w-100" alt="...">
+                                <img src="https://imgs.search.brave.com/si7yeTitF16kbVldL6znS3z8Ft60ZVwqA6VfHBz0aEc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAyLzk1LzczLzgz/LzM2MF9GXzI5NTcz/ODMxM190NzRBNThI/bVV2U3lsV3kyRlJk/bXA0TzRkNXFkanNU/Uy5qcGc" class="d-block w-100" alt="...">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
@@ -119,77 +97,45 @@
         <div class="container pb-4">
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6">
-                    <div class="card border-success border-2 rounded-3 h-100 shadow-sm">
-                        <div
-                            class="card-img-placeholder bg-gradient-green d-flex align-items-center justify-content-center text-white">
-                            <i class="fas fa-image fa-3x"></i>
-                        </div>
+                    <div class="card border-success border-2 rounded-3 h-100 shadow-sm">    
+                            <img src="https://imgs.search.brave.com/ddup19AxBACEE1vQ0RPEf66hmM8dNoTe6IHAcqBJs_o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvc2Ix/MDA2NzgyOGstMDAx/L2VzL2ZvdG8va2l0/dGVuLWxvb2tpbmct/YXQtZmlzaC1pbi1i/b3dsLXNpZGUtdmll/dy1zdHVkaW8tc2hv/dC5qcGc_cz02MTJ4/NjEyJnc9MCZrPTIw/JmM9cXpJTU5BOWJo/ZzZ6S3N4Z09VX0s3/X09DRjBQOTZUUV93/QUpfbWZHZHZhZz0" alt="">
                         <div class="card-body p-4">
-                            <h5 class="card-title fw-bold text-success mb-3">Mascota</h5>
-                            <p class="card-text text-secondary small lh-base mb-4">Custom web-based is geared to your
-                                business needs with modern technologies.</p>
-                            <a href="#"
-                                class="text-decoration-none fw-semibold small d-inline-flex align-items-center gap-2"
-                                style="color: #ff8c42;">
-                                Learn more
-                                <i class="fas fa-arrow-right"></i>
+                            <h5 class="card-title fw-bold text-success mb-3">Gato</h5>
+                            <p class="card-text text-secondary small lh-base mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                            <a href="#" class="btn bg-gradient-orange text-white">Leer más</a>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card border-success border-2 rounded-3 h-100 shadow-sm">
-                        <div
-                            class="card-img-placeholder bg-gradient-green d-flex align-items-center justify-content-center text-white">
-                            <i class="fas fa-image fa-3x"></i>
-                        </div>
+                            <img src="https://imgs.search.brave.com/ZFUKYe-3EFEFKcGztzDLrX6dsXg6yfvwXesXILKHEG0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90by1ncmF0aXMv/YWRvcmFibGUtcGVy/cm8tYmFzZW5qaS1t/YXJyb24tYmxhbmNv/LXNvbnJpZW5kby1j/aG9jYW5kby1jaW5j/by1haXNsYWRvLWJs/YW5jb18zNDYyNzgt/MTY1Ny5qcGc_c2Vt/dD1haXNfaHlicmlk/Jnc9NzQwJnE9ODA" alt="">
                         <div class="card-body p-4">
-                            <h5 class="card-title fw-bold text-success mb-3">Mascota</h5>
-                            <p class="card-text text-secondary small lh-base mb-4">Native cross-platform mobile
-                                applications for iOS and Android.</p>
-                            <a href="#"
-                                class="text-decoration-none fw-semibold small d-inline-flex align-items-center gap-2"
-                                style="color: #ff8c42;">
-                                Learn more
-                                <i class="fas fa-arrow-right"></i>
+                            <h5 class="card-title fw-bold text-success mb-3">Perro</h5>
+                            <p class="card-text text-secondary small lh-base mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                            <a href="#" class="btn bg-gradient-orange text-white">Leer más</a>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card border-success border-2 rounded-3 h-100 shadow-sm">
-                        <div
-                            class="card-img-placeholder bg-gradient-green d-flex align-items-center justify-content-center text-white">
-                            <i class="fas fa-image fa-3x"></i>
-                        </div>
+                            <img src="https://imgs.search.brave.com/JZGaS9UHfMHuRkyCWjF2CrTJoOkJlzS4uwXSn1xIxBE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9lc3Rh/dGljb3MtY2RuLnBy/ZW5zYWliZXJpY2Eu/ZXMvY2xpcC9kNDJi/ZDQ4MS0zOTJhLTQ4/YjAtYTRiNi0yMGZi/ZmI2N2UxNDVfYWx0/YS1saWJyZS1hc3Bl/Y3QtcmF0aW9fZGVm/YXVsdF8wLmpwZw" alt="">
                         <div class="card-body p-4">
-                            <h5 class="card-title fw-bold text-success mb-3">Mascota</h5>
-                            <p class="card-text text-secondary small lh-base mb-4">Beautiful and intuitive designs that
-                                enhance user experience.</p>
-                            <a href="#"
-                                class="text-decoration-none fw-semibold small d-inline-flex align-items-center gap-2"
-                                style="color: #ff8c42;">
-                                Learn more
-                                <i class="fas fa-arrow-right"></i>
+                            <h5 class="card-title fw-bold text-success mb-3">Cerdito</h5>
+                            <p class="card-text text-secondary small lh-base mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                            <a href="#" class="btn bg-gradient-orange text-white">Leer más</a>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card border-success border-2 rounded-3 h-100 shadow-sm">
-                        <div
-                            class="card-img-placeholder bg-gradient-green d-flex align-items-center justify-content-center text-white">
-                            <i class="fas fa-image fa-3x"></i>
-                        </div>
+                            <img src="https://imgs.search.brave.com/UMyDB-2fWDpio3DLVLmxN-SZmXpK0qPcqDmivRsVVYM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTc1/NTAyNTIxL2VzL2Zv/dG8vc2VycGllbnRl/LWFsYmluYS1waXQl/QzMlQjNuLWJpcm1h/bm8uanBnP3M9NjEy/eDYxMiZ3PTAmaz0y/MCZjPThXN0RxcU1i/dmdtMHRMa2xHS2Yz/RnBCR041eVhsRzg0/UzhQdk44RDZiVnc9" alt="">                        
                         <div class="card-body p-4">
-                            <h5 class="card-title fw-bold text-success mb-3">Mascota</h5>
-                            <p class="card-text text-secondary small lh-base mb-4">Strategic marketing solutions to grow
-                                your online presence.</p>
-                            <a href="#"
-                                class="text-decoration-none fw-semibold small d-inline-flex align-items-center gap-2"
-                                style="color: #ff8c42;">
-                                Learn more
-                                <i class="fas fa-arrow-right"></i>
+                            <h5 class="card-title fw-bold text-success mb-3">Serpiente</h5>
+                            <p class="card-text text-secondary small lh-base mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                            <a href="#" class="btn bg-gradient-orange text-white">Leer más</a>
                             </a>
                         </div>
                     </div>

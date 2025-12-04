@@ -1,0 +1,34 @@
+ :root {
+            --bs-primary: #0a802d;
+            --bs-secondary: #ff8c42;
+        }
+
+        .bg-gradient-green {
+            background: #0a802d;
+        }
+
+        .bg-gradient-orange {
+            background: #e67e22;
+        }
+
+        .carousel-section {
+            height: 400px;
+        }
+
+        .card-img-placeholder {
+            height: 200px;
+        }
+
+        /* Ajuste del tamaño del logo en el navbar */
+        .navbar-brand img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* Tamaño ligeramente menor en pantallas pequeñas */
+        @media (max-width: 576px) {
+            .navbar-brand img {
+                height: 40px;
+            }
+        }

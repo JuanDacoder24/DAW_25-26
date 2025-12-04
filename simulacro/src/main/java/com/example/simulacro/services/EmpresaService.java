@@ -37,7 +37,7 @@ public class EmpresaService {
     }
 
     //Actualizar nombre de empleado
-    public boolean actualizarNombre(String nombre, Long id) {
+    public boolean actualizarNombre(String nombre, String id) {
         Empleado empleado = empleadoRepository.findById(id).orElse(null);
         if (empleado == null) {
             return false; // No se encontro
@@ -48,7 +48,7 @@ public class EmpresaService {
     }
 
     //Eliminar registro
-    public boolean eliminarRegistro(Long id) {
+    public boolean eliminarRegistro(String id) {
         if (!empleadoRepository.existsById(id)) {
             return false; // No existe
         }

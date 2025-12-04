@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.simulacro.entity.Empleado;
-import com.example.simulacro.repository.EmpleadoRepository;
-import com.example.simulacro.repository.EmpresaRepository;
 import com.example.simulacro.services.EmpresaService;
 
 import org.springframework.web.bind.annotation.PostMapping;
@@ -50,13 +48,15 @@ public class EmpleadoController {
         service.addEmpleado(empleado);
     }
 
+    //Actualizar nombre de empleado
     @PutMapping("/{id}/actualizarnombre")
-    public void actualizarNombre(@PathVariable Long id, @RequestParam String nombre) {
+    public void actualizarNombre(@PathVariable String id, @RequestParam String nombre) {
         service.actualizarNombre(nombre, id);
     }
 
+    //Eliminar registro
     @DeleteMapping("/{id}/eliminarregistro")
-    public void eliminarRegistro(@PathVariable Long id) {
+    public void eliminarRegistro(@PathVariable String id) {
         service.eliminarRegistro(id);
     }
 

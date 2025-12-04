@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="album.css">
+    <title>Album de animales</title>
+</head>
+
+<body>
+    <!-- Navbar: 'navbar-expand-lg' permite que el menú se expanda en pantallas grandes y se colapse en móviles,
+     de igual manera estoy usando 'bg-gradient-green' es una clase personalizada para el color de fondo-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-green shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <div class="d-flex align-items-center gap-2">
+                    <img src="img/logo_examen-removebg.png" alt="">
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="pagina.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="album.html">Album</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero banner: Usa 'py-5 bg-light' para dar espacio vertical y fondo claro, dentro de 'container py-5' se centra el contenido y se añade padding, 
+     'row align-items-center' alinea verticalmente los elementos-->
+    <section class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="pe-lg-4">
+                        <h1 class="display-5 fw-bold text-success mb-4">Álbum de animales</h1>
+                        <p class="text-secondary lh-lg">Lorem Ipsum is simply dummy text of the printing and typesetting
+                            industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+                            an unknown printer took a galley of type and scrambled it to make a type specimen book. It
+                            has survived not only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged. It was popularised in the 1960s with the release of</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container my-5">
+        <!-- Primera fila: 3 animales (Perro, Serpiente, Burro) -->
+        <div class="row justify-content-center mb-4">
+            <!-- Cada col ocupa 4 columnas en pantallas grandes, 6 en medianas, 12 en pequeñas -->
+            <!-- Las cartas se distribuyen horizontalmente en la fila -->
+            <div class="col-12 col-md-6 col-lg-4 mb-3">
+                <div class="card border-success border-2 rounded-3 h-100 shadow-sm">
+                    <img src="https://imgs.search.brave.com/ZFUKYe-3EFEFKcGztzDLrX6dsXg6yfvwXesXILKHEG0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90by1ncmF0aXMv/YWRvcmFibGUtcGVy/cm8tYmFzZW5qaS1t/YXJyb24tYmxhbmNv/LXNvbnJpZW5kby1j/aG9jYW5kby1jaW5j/by1haXNsYWRvLWJs/YW5jb18zNDYyNzgt/MTY1Ny5qcGc_c2Vt/dD1haXNfaHlicmlk/Jnc9NzQwJnE9ODA"
+                        alt="">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold text-success mb-3">Perro</h5>
+                        <p class="card-text text-secondary small lh-base mb-4">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting</p>
+                            <!--Aqui lo que hago es utilizar la clase del css que ya habia creado anteriormente
+                            con los colores predeterminado, en este caso esto usando el color naranja con color blanco de texto, y asi en las demas columnas -->
+                        <a href="#" class="btn bg-gradient-orange text-white">Leer más</a>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-3">
+                <div class="card border-success border-2 rounded-3 h-100 shadow-sm">
+                    <img src="https://imgs.search.brave.com/UMyDB-2fWDpio3DLVLmxN-SZmXpK0qPcqDmivRsVVYM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTc1/NTAyNTIxL2VzL2Zv/dG8vc2VycGllbnRl/LWFsYmluYS1waXQl/QzMlQjNuLWJpcm1h/bm8uanBnP3M9NjEy/eDYxMiZ3PTAmaz0y/MCZjPThXN0RxcU1i/dmdtMHRMa2xHS2Yz/RnBCR041eVhsRzg0/UzhQdk44RDZiVnc9"
+                        alt="">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold text-success mb-3">Serpiente</h5>
+                        <p class="card-text text-secondary small lh-base mb-4">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting</p>
+                        <a href="#" class="btn bg-gradient-orange text-white">Leer más</a>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-3">
+                <div class="card border-success border-2 rounded-3 h-100 shadow-sm">
+                            <img src="https://imgs.search.brave.com/u-FurhonRyE_ulB1WOKuPdo3UWRs_Kyll0FLbPMUO4I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cy4x/MjNyZi5jb20vNDUw/d20vemhpZ2Fsa2lu/YS96aGlnYWxraW5h/MjIwNy96aGlnYWxr/aW5hMjIwNzAwMTU0/LzE4OTEwODM0Ni1y/ZXRyYXRvLWRlLXVu/LWN1cmlvc28tYnVy/cm8tbWFyciVDMyVC/M24tb3NjdXJvLXNv/YnJlLWVsLWZvbmRv/LWJvcnJvc28tZGUt/dW4tcHJhZG8teS11/bi1pbnZlcm5hZGVy/by1hbC5qcGc_dmVy/PTY" alt="">                        
+                        <div class="card-body p-4">
+                            <h5 class="card-title fw-bold text-success mb-3">Burro</h5>
+                            <p class="card-text text-secondary small lh-base mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                            <a href="#" class="btn bg-gradient-orange text-white">Leer más</a>
+                            </a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <!-- Segunda fila: 1 animal centrado (Lemur) -->
+        <div class="row justify-content-center mb-4">
+            <!-- Solo una carta, centrada horizontalmente -->
+            <div class="col-12 col-md-6 col-lg-4 mb-3">
+                <div class="card border-success border-2 rounded-3 h-100 shadow-sm">
+                            <img src="https://imgs.search.brave.com/eq7QfLpwHGNMTkZgJZLFho8uPR8jR18qmug9qxW01nc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cy4x/MjNyZi5jb20vNDUw/d20vc29vc2pvenNl/Zi9zb29zam96c2Vm/MjIwNi9zb29zam96/c2VmMjIwNjAwMDEw/LzE4ODg2MzMwNS1t/b25vLWwlQzMlQTlt/dXItZGUtY29sYS1h/bmlsbGFkYS1tYW0l/QzMlQURmZXJvLXkt/bWFtJUMzJUFEZmVy/b3MtbXVuZG8tdGVy/cmVzdHJlLXktZmF1/bmEtZmF1bmEteS16/b29sb2clQzMlQURh/LmpwZz92ZXI9Ng" alt="">                        
+                        <div class="card-body p-4">
+                            <h5 class="card-title fw-bold text-success mb-3">Lemur</h5>
+                            <p class="card-text text-secondary small lh-base mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                            <a href="#" class="btn bg-gradient-orange text-white">Leer más</a>
+                            </a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <!-- Tercera fila: 2 animales (Mamá mono, Monito) -->
+        <div class="row justify-content-center mb-4">
+            <!-- Dos cartas, distribuidas horizontalmente y centradas -->
+            <div class="col-12 col-md-6 col-lg-4 mb-3">
+                <div class="card border-success border-2 rounded-3 h-100 shadow-sm">
+                            <img src="https://imgs.search.brave.com/eKwMo8IzvZR79rIgLTVM0Y8YPixfGLyr85iOPRfFVLw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9lcy5h/YXAuZXUvd3AtY29u/dGVudC91cGxvYWRz/L3NpdGVzLzYvMjAy/Mi8xMC9BQVBfbWFj/YWNvX2JlcmJlcmlh/X2ZpY2hhX3JlZHVj/aWRhLmpwZw" alt="">                        
+                        <div class="card-body p-4">
+                            <h5 class="card-title fw-bold text-success mb-3">Mamá mono</h5>
+                            <p class="card-text text-secondary small lh-base mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                            <a href="#" class="btn bg-gradient-orange text-white">Leer más</a>
+                            </a>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-3">
+                <div class="card border-success border-2 rounded-3 h-100 shadow-sm">
+                    <!--Segunda imagen con formato jpg-->
+                            <img src="img/mono.jpg" alt="">                        
+                        <div class="card-body p-4">
+                            <h5 class="card-title fw-bold text-success mb-3">Monito</h5>
+                            <p class="card-text text-secondary small lh-base mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                            <a href="#" class="btn bg-gradient-orange text-white">Leer más</a>
+                            </a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
