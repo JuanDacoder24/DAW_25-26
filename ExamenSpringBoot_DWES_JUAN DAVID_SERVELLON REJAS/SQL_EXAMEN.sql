@@ -6,7 +6,7 @@ USE examen_spring_dwes;
 
 -- Tabla EQUIPOS
 CREATE TABLE IF NOT EXISTS equipos (
- id INT NOT NULL AUTO_INCREMENT, -- UUID (String generado con UUID.randomUUID().toString())
+ id BIGINT NOT NULL AUTO_INCREMENT,
  nombre_equipo VARCHAR(100) NOT NULL,
  sede VARCHAR(100) NOT NULL,
  PRIMARY KEY (id)
@@ -20,13 +20,13 @@ VALUES (1, 'Racing', 'Santander'),
 
 -- Tabla JUGADORES
 CREATE TABLE IF NOT EXISTS jugadores (
- id CHAR(36) NOT NULL, -- UUID
+ id BIGINT NOT NULL AUTO_INCREMENT,
  dorsal INT NOT NULL,
  nombre VARCHAR(100) NOT NULL,
  apellido1 VARCHAR(100) NOT NULL,
  apellido2 VARCHAR(100) NOT NULL,
- posicion ENUM('PORTERO', 'DEFENSA', 'MEDIO', 'DELANTERO') NOT NULL,
- equipo_id CHAR(36) NOT NULL, -- FK a equipos.id (UUID)
+ posiciones VARCHAR(255) NOT NULL,
+ equipo_id BIGINT NOT NULL,
  PRIMARY KEY (id),
  INDEX idx_jugadores_equipo (equipo_id),
  CONSTRAINT fk_jugadores_equipos
@@ -34,24 +34,23 @@ CREATE TABLE IF NOT EXISTS jugadores (
  REFERENCES equipos(id)
  ON UPDATE CASCADE
  ON DELETE RESTRICT,
- -- Para evitar dorsales duplicados dentro del mismo equipo
  UNIQUE KEY uk_jugadores_equipo_dorsal (equipo_id, dorsal)
 ) ENGINE=InnoDB;
 
-INSERT INTO jugadores (id, dorsal, nombre, apellido1, apellido2, posicion, equipo_id) 
-VALUES ('', 10, 'Sergio', 'Marin', 'Perez', 'DEFENSA', 1),
-('', 5, 'Enrique', 'Sainz', 'Sainz', 'DEFENSA', 1),
-('', 11, 'Juan', 'Gonzales', 'Noriega', 'MEDIO', 2),
-('', 19, 'Pedro', 'Salaverry', 'Guzman', 'DEFENSA', 2),
-('', 2, 'Manuel', 'Rejas', 'Pinto', 'DELANTERO', 3),
-('', 15, 'Alex', 'Argumosa', 'Salazar', 'MEDIO', 3),
-('', 4, 'Andres', 'Picanto', 'Kia', 'DEFENSA', 4),
-('', 12, 'Gonzalo', 'Servellon', 'Bastidas', 'DELANTERO', 4),
-('', 20, 'Felix', 'Quispe', 'Mamani', 'MEDIO', 4);
+INSERT INTO jugadores (dorsal, nombre, apellido1, apellido2, posiciones, equipo_id) 
+VALUES (10, 'Sergio', 'Marin', 'Perez', 'DEFENSA', 1),
+(5, 'Enrique', 'Sainz', 'Sainz', 'DEFENSA', 1),
+(11, 'Juan', 'Gonzales', 'Noriega', 'MEDIO', 2),
+(19, 'Pedro', 'Salaverry', 'Guzman', 'DEFENSA', 2),
+(2, 'Manuel', 'Rejas', 'Pinto', 'DELANTERO', 3),
+(15, 'Alex', 'Argumosa', 'Salazar', 'MEDIO', 3),
+(4, 'Andres', 'Picanto', 'Kia', 'DEFENSA', 4),
+(12, 'Gonzalo', 'Servellon', 'Bastidas', 'DELANTERO', 4),
+(20, 'Felix', 'Quispe', 'Mamani', 'MEDIO', 4);
 
 -- Tabla ÁRBITROS
 CREATE TABLE IF NOT EXISTS arbitros (
- id CHAR(36) NOT NULL, -- UUID (ID de colegiado)
+ id BIGINT NOT NULL AUTO_INCREMENT,
  nombre VARCHAR(100) NOT NULL,
  apellido1 VARCHAR(100) NOT NULL,
  apellido2 VARCHAR(100) NOT NULL,
@@ -59,13 +58,19 @@ CREATE TABLE IF NOT EXISTS arbitros (
  PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
+INSERT INTO arbitros (nombre, apellido1, apellido2, rol)
+VALUES ('Carlos', 'Martinez', 'Lopez', 'PRINCIPAL'),
+('Juan', 'Garcia', 'Fernandez', 'ASISTENTE'),
+('Roberto', 'Sanchez', 'Torres', 'PRINCIPAL'),
+('Miguel', 'Diaz', 'Romero', 'ASISTENTE');
+
 -- Tabla PARTIDOS
 CREATE TABLE IF NOT EXISTS partidos (
- id CHAR(36) NOT NULL, -- UUID (IDPartido)
- equipo1_id CHAR(36) NOT NULL, -- FK a equipos.id
- equipo2_id CHAR(36) NOT NULL, -- FK a equipos.id
- arbitro1_id CHAR(36) NOT NULL, -- FK a arbitros.id
- arbitro2_id CHAR(36) NOT NULL, -- FK a arbitros.id
+ id BIGINT NOT NULL AUTO_INCREMENT,
+ equipo1_id BIGINT NOT NULL,
+ equipo2_id BIGINT NOT NULL,
+ arbitro1_id BIGINT NOT NULL,
+ arbitro2_id BIGINT NOT NULL,
  PRIMARY KEY (id),
  INDEX idx_partidos_equipo1 (equipo1_id),
  INDEX idx_partidos_equipo2 (equipo2_id),
@@ -92,4 +97,3 @@ CREATE TABLE IF NOT EXISTS partidos (
  ON UPDATE CASCADE
  ON DELETE RESTRICT
 ) ENGINE=InnoDB;
-

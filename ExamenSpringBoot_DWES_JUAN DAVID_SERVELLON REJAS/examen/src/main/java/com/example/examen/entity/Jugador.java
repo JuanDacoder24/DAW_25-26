@@ -1,7 +1,5 @@
 package com.example.examen.entity;
 
-import java.util.UUID;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,6 +8,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.EnumType;
 
 @Entity
 @Table(name = "jugadores")
@@ -17,7 +17,7 @@ public class Jugador {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id = UUID.randomUUID().toString();
+    private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "equipo_id", nullable = false)
@@ -27,6 +27,7 @@ public class Jugador {
     private String nombre;
     private String apellido1;
     private String apellido2;
+    @Enumerated(EnumType.STRING)
     private Posiciones posiciones;
 
     public Jugador() {
@@ -44,13 +45,11 @@ public class Jugador {
     }
 
 
-    
-
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

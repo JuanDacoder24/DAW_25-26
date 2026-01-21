@@ -1,8 +1,8 @@
 package com.example.examen.entity;
 
-import java.util.UUID;
-
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -14,15 +14,15 @@ public class Arbitro {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id = UUID.randomUUID().toString();
+    private Long id;
 
     private String nombre;
     private String apellido1;
     private String apellido2;
+    @Enumerated(EnumType.STRING)
     private Rol rol;
 
     public Arbitro(){
-
     }
 
     public Arbitro(String nombre, String apellido1, String apellido2, Rol rol) {
@@ -32,11 +32,11 @@ public class Arbitro {
         this.rol = rol;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
