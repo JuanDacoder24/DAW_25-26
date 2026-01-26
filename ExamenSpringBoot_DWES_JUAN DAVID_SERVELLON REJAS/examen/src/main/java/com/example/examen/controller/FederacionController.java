@@ -36,7 +36,7 @@ public class FederacionController {
         return service.getAllEquipos();
     }
 
-    // Obtener equipo por ID
+    // Agregar equipo por ID
     @PostMapping("/equipos")
     public ResponseEntity<String> addEquipo(@RequestBody Equipo equipo){
         service.addEquipo(equipo);
